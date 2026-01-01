@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cassette</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:black;
+        }
+        #animatie{
+            height:75dvh;
+            position:fixed;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            filter: hue-rotate(50deg);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titel"></h1>
+    
+    <img id="animatie" src="https://i.pinimg.com/originals/f7/20/df/f720df37ff3964df6e4b92146a1fe97e.gif">
+
+
+    <script>
+async function read() {
+
+
+  try {
+    const ndef = new NDEFReader();
+    await ndef.scan();
+
+    ndef.addEventListener("readingerror", () => {
+      console.log("Argh! Cannot read data from the NFC tag. Try another one?");
+    });
+
+    ndef.addEventListener("reading", ({ message }) => {
+        for (const record of message.records) {
+
+            if (record.recordType === "text") {
+                const decoder = new TextDecoder(record.encoding);
+                const text = decoder.decode(record.data);
+                console.log("Tekst op NFC-tag:", text);
+
+                if(text === "daft punk") {
+                    document.getElementById('titel').style.color = "orange";
+                } else if(text === "kerst") {
+                    document.getElementById('titel').style.color = "red";
+                } else if(text === "Bangers") {
+                    document.getElementById('titel').style.color = "green";
+                } else if(text === "Lars") {
+                    document.getElementById('titel').style.color = "blue";
+                }
+
+                document.getElementById('titel').innerHTML = text;
+            }
+
+        }
+    });
+  } catch (error) {
+    log("Argh! " + error);
+  }
+
+  }
+
+    </script>
+</body>
+</html>
