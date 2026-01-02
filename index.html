@@ -27,6 +27,8 @@
                 text-transform: uppercase;
                 font-size:15dvh;
                 transform: translate(-50%,-50%) rotate(-90deg);
+                -webkit-text-stroke: "4px white";
+                color:transparent;
             }
             svg{
                 width:5vw;
@@ -42,10 +44,34 @@
                 flex-direction:row;
                 gap:5vw;    
             }
+
+            #volume{
+                position:fixed;
+                -webkit-appearance: none;
+                appearance: none;
+                right:7%;
+                top:50%;
+                height:5dvh;
+                width:70dvh;
+                transform: translateY(-50%) translateX(+50%) rotate(-90deg);
+                border-radius:50px;
+                background-color: rgba(0,0,0,0);
+                border:2px solid white;
+            }
+
+            #volume::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width:5dvh;
+            height:5dvh;
+            background:white;
+            border-radius:50px;
+            }
         </style>
     </head>
     <body>
         <h1 id="titel"></h1>
+        <input id="volume" type="range" oninput="document.getElementById('audio').volume = document.getElementById('volume').value / 100;" ></input>
         
         <img id="animatie" onclick="read()" src="https://i.pinimg.com/originals/f7/20/df/f720df37ff3964df6e4b92146a1fe97e.gif">
 
@@ -87,29 +113,30 @@
                     console.log("Tekst op NFC-tag:", text);
 
                     if(text === "daft punk") {
-                        document.querySelectorAll(".svgg").forEach(svg => {
+                        /*document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "orange";
                         })
-                        document.getElementById('titel').style.color = "orange";
+                        document.getElementById('titel').style.color = "orange";*/
                     } else if(text === "kerst") {
-                        document.querySelectorAll(".svgg").forEach(svg => {
+                        /*document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "red";
                         })
-                        document.getElementById('titel').style.color = "red";
+                        document.getElementById('titel').style.color = "red";*/
                         liedjes = ["All_I_Want_for_Christmas_Is_You.mp3", "Last_Christmas.mp3"];
                     } else if(text === "Bangers") {
-                        document.querySelectorAll(".svgg").forEach(svg => {
+                        /*document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "green";
                         })
-                        document.getElementById('titel').style.color = "green";
+                        document.getElementById('titel').style.color = "green";*/
                     } else if(text === "Lars") {
-                        document.querySelectorAll(".svgg").forEach(svg => {
+                        /*document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "blue";
                         })
-                        document.getElementById('titel').style.color = "blue";
+                        document.getElementById('titel').style.color = "blue";*/
                     }
 
                     document.getElementById('titel').innerHTML = text;
+                    document.getElementById('titel').style.webkitTextStroke = "4px white";
                     hoeveelste = 0;
                     document.getElementById("audio").src = liedjes[hoeveelste];
                 }
@@ -122,6 +149,8 @@
 
     }
 
+    document.getElementById("audio").volume = 0.5;
+    document.getElementById("volume").value = document.getElementById("audio").volume * 100;
     var playpausee = 0;
 
     function playpause() {
