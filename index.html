@@ -31,9 +31,15 @@
                 -webkit-text-stroke: "4px white";
                 color:transparent;
             }
-            svg{
+            .svgg{
                 width:5vw;
                 fill:white;
+                transition: 0.3s;
+                transform: scale(1);
+            }
+            .svgg:active {
+                transform: scale(1.2);
+                transition: 0.3s;
             }
             #icons{
                 position:fixed;
@@ -137,7 +143,7 @@
                     }
 
                     document.getElementById('titel').innerHTML = text;
-                    document.getElementById('titel').style.webkitTextStroke = "2px white";
+                    document.getElementById('titel').style.webkitTextStroke = "3px white";
                     hoeveelste = 0;
                     document.getElementById("audio").src = liedjes[hoeveelste];
                 }
@@ -208,6 +214,5 @@
         </script>
     </body>
     </html>
-
 
 
