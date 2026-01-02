@@ -20,11 +20,13 @@
                 filter: hue-rotate(50deg);
             }
             #titel{
-            position:fixed;
-                left:50%;
-                top:5%;
-                transform: translate(-50%,-50%);  
+                position:fixed;
+                left:7%;
+                top:45%;
                 font-family:arial;
+                text-transform: uppercase;
+                font-size:15dvh;
+                transform: translate(-50%,-50%) rotate(-90deg);
             }
             svg{
                 width:5vw;
@@ -43,7 +45,7 @@
         </style>
     </head>
     <body>
-        <!--<h1 id="titel"></h1>-->
+        <h1 id="titel"></h1>
         
         <img id="animatie" onclick="read()" src="https://i.pinimg.com/originals/f7/20/df/f720df37ff3964df6e4b92146a1fe97e.gif">
 
@@ -88,22 +90,26 @@
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "orange";
                         })
+                        document.getElementById('titel').style.color = "orange";
                     } else if(text === "kerst") {
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "red";
                         })
+                        document.getElementById('titel').style.color = "red";
                         liedjes = ["All_I_Want_for_Christmas_Is_You.mp3", "Last_Christmas.mp3"];
                     } else if(text === "Bangers") {
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "green";
                         })
+                        document.getElementById('titel').style.color = "green";
                     } else if(text === "Lars") {
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "blue";
                         })
+                        document.getElementById('titel').style.color = "blue";
                     }
 
-                    //document.getElementById('titel').innerHTML = text;
+                    document.getElementById('titel').innerHTML = text;
                     hoeveelste = 0;
                     document.getElementById("audio").src = liedjes[hoeveelste];
                 }
