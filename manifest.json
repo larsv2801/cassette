@@ -1,0 +1,47 @@
+{
+    "name": "cassette",
+    "short_name": "cassette",
+    "description": "cassette",
+    "categories": ["entertainment"],
+    "start_url": "/cassette/index.html?homescreen=true",
+    "version": "1.0.3",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "icons": [
+        {
+            "src": "/Pokemoncache/pokecachenormaal192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/Pokemoncache/pokecachezwart.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+         {
+            "src": "/Pokemoncache/pokecachenormaal144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+  {
+    "src": "/F1/constructors.png",
+    "sizes": "1084x2068",
+    "type": "image/png"
+  },
+  {
+    "src": "/F1/imola.png",
+    "sizes": "1084x2069",
+    "type": "image/png"
+  },
+  {
+    "src": "/F1/season.png",
+    "sizes": "1084x2066",
+    "type": "image/png"
+  }
+  ]
+}
