@@ -84,23 +84,19 @@
                     console.log("Tekst op NFC-tag:", text);
 
                     if(text === "daft punk") {
-                        document.getElementById('titel').style.color = "orange";
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "orange";
                         })
                     } else if(text === "kerst") {
-                        document.getElementById('titel').style.color = "red";
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "red";
                         })
                         liedjes = ["All_I_Want_for_Christmas_Is_You.mp3", "Last_Christmas.mp3"];
                     } else if(text === "Bangers") {
-                        document.getElementById('titel').style.color = "green";
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "green";
                         })
                     } else if(text === "Lars") {
-                        document.getElementById('titel').style.color = "blue";
                         document.querySelectorAll(".svgg").forEach(svg => {
                             svg.style.fill = "blue";
                         })
@@ -137,4 +133,5 @@
         </script>
     </body>
     </html>
+
 
