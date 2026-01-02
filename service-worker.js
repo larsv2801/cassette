@@ -5,6 +5,7 @@ self.addEventListener('install', (event) => {
         '/cassette/All_I_Want_for_Christmas_Is_You.mp3',
         '/cassette/Last_Christmas.mp3',
         '/cassette/index.html',
+        '/cassette/manifest.json'
       ]);
     })
   );
